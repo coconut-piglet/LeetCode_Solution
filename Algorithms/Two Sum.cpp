@@ -11,8 +11,8 @@ public:
         //         }
         //     }
         // }
-		// Solution 2 Semi One-pass Hash Table
-        map<int, int> numsTable;
+        // Solution 2 Semi One-pass Hash Table
+		map<int, int> numsTable;
         map<int, int>::iterator iter;
         for (int i = 0; i < nums.size(); i++) {
             numsTable.insert(pair(nums[i], i));
