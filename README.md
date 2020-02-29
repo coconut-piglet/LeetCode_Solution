@@ -13,3 +13,5 @@
 #5 Longest Palindromic Substring `91.17%` `62.76%`
 
 #6 ZigZag Conversion `94.01%` `100%`
+
+\#7 Reverse Integer `100%` `100%`
