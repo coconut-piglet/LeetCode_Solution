@@ -15,3 +15,5 @@
 #6 ZigZag Conversion `94.01%` `100%`
 
 \#7 Reverse Integer `100%` `100%`
+
+#8 String to Integer (atoi) `100%` `100%`
