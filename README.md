@@ -33,3 +33,5 @@
 #12 Integer to Roman `76.39%` `100.00%`
 
 #13 Roman to Integer `57.95%` `41.18%`
+
+#14 Longest Common Prefix `100.00%` `100.00%`
