@@ -11,7 +11,6 @@ public:
             if (i > 0 && target == previous) continue; // skip duplication
             j = i + 1;
             k = size - 1;
-            cout << target << endl;
             while (j < k) {
                 num1 = nums[j];
                 num2 = nums[k];
