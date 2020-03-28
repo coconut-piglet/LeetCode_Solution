@@ -16,8 +16,9 @@ public:
     }
 private:
     void solveInorderTraversal(TreeNode* root, vector<int> &ret) {
-        if (root -> left != nullptr) solveInorderTraversal(root -> left, ret);
+        if (root == nullptr) return;
+        solveInorderTraversal(root -> left, ret);
         ret.push_back(root -> val);
-        if (root -> right != nullptr) solveInorderTraversal(root -> right, ret);
+        solveInorderTraversal(root -> right, ret);
     }
-;};
+};
