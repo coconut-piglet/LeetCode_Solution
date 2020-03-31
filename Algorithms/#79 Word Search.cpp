@@ -1,10 +1,5 @@
 class Solution {
 public:
-    int row, col, end;
-    int moveRow[4] = {1, -1, 0, 0};
-    int moveCol[4] = {0, 0, 1, -1};
-    string search;
-    
     bool exist(vector<vector<char>>& board, string word) {
         row = board.size();
         col = board[0].size();
@@ -24,6 +19,10 @@ public:
         return false;
     }
 private:
+    int row, col, end;
+    int moveRow[4] = {1, -1, 0, 0};
+    int moveCol[4] = {0, 0, 1, -1};
+    string search;
     bool findNext(vector<vector<char>>& board, int index, int startRow, int startCol) {
         if (index == end) return true;
         int rowToFind, colToFind;
