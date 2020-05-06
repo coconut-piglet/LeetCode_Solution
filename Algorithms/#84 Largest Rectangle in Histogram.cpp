@@ -6,7 +6,7 @@ public:
         if (size == 0) return 0;
         if (size == 1) return heights[0];
         
-        int maxArea, height, width, area;
+        int maxArea, height, width, area, tmp;
         stack<int> prev;
         
         maxArea = 0;
@@ -18,24 +18,30 @@ public:
                 prev.push(i);
                 continue;
             }
-            else if (heights[i] > heights[prev.top()]) {
+            
+            int *crtHeight = &heights[i];
+            int *prvHeight = &heights[prev.top()];
+            
+            if (*crtHeight > *prvHeight) {
                 prev.push(i);
                 continue;
             }
-            else if (heights[i] < heights[prev.top()]) {
+            
+            if (*crtHeight < *prvHeight) {
                 while (!prev.empty()) {
-                    height = heights[prev.top()];
-                    if (height < heights[i]) {
+                    tmp = prev.top();
+                    height = heights[tmp];
+                    if (height < *crtHeight) {
+                        tmp = i - width;
                         break;
                     }
-                    width = i - prev.top();
+                    width = i - tmp;
                     area = height * width;
                     maxArea = area > maxArea ? area : maxArea;
                     prev.pop();
                 }
-                prev.push(i - width);
-                heights[i - width] = heights[i];
-                continue;
+                prev.push(tmp);
+                heights[tmp] = *crtHeight;
             }
         }
         return maxArea;
