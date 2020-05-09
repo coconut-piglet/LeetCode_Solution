@@ -23,13 +23,13 @@ public:
             for (count = k; tailEndOld != nullptr & count > 0; count--) {
                 tailEndOld = tailEndOld->next;
             }
-            if (count > 0) { // reach end
+            if (count > 0 || tailEndOld == nullptr) { // reach end
                 break;
             }
             head->next = reverse(tailBeginOld, tailEndOld);
             head = tailBeginOld;
         }
-        return ret;
+        return ret->next;
     }
 private:
     ListNode* reverse(ListNode* tailBegin, ListNode* tailEnd) {
