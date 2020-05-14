@@ -12,24 +12,30 @@ public:
             highNum = nums[high];
             
             if (target > midNum) {
-                if (target <= highNum) { // right half sorted + right
-                    low = mid + 1;
-                    continue;
+                if (target == highNum) {
+                    return true;
                 }
-                else if (highNum < midNum) { // right rotated + right
+                else if (target < highNum) {
                     low = mid + 1;
                     high = high - 1;
-                    continue;
                 }
-                else if (highNum > midNum) { // right half sorted + left
+                else if (highNum < midNum) {
+                    low = mid + 1;
+                    high = high - 1;
+                }
+                else if (highNum > midNum) {
                     high = mid - 1;
                 }
                 else {
                     high--;
                 }
             }
-            else if (target < midNum) { // reverse above
-                if (target >= lowNum) {
+            else if (target < midNum) {
+                if (target == lowNum) {
+                    return true;
+                }
+                else if (target > lowNum) {
+                    low = low + 1;
                     high = mid - 1;
                 }
                 else if (lowNum > midNum) {
